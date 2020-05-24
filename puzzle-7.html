@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Puzzle7</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=acac15c2f95b7d3b6e201c44bbe8da83">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
+    <link rel="stylesheet" href="assets/css/styles.min.css?h=93bb8b72914cac01d0614bd0d28489b8">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <div class="filter"></div>
+    <div class="landscape">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-8 my-auto">
+                    <div class="mx-auto header-content text1">
+                        <p>Life brings pleasent suprises. But it always better if we don't expect them.
+                            <br> Who would have known that a tutorial session could be worthy to attend?
+                            <br> Who knew it would reveal few truths that one never expected?
+                            <br> Alas! But all this did happen ____ __ _____ ___
+                        </p>
+                        <p style="font-size: small;">Note : in the answer replace spaces with _ . <br>
+                        The answer might get little ambigous with soo many spaces. <br>
+                        It this a code snippet that will remove this ambiguity?</p>
+                        <img src="assets/img/code.png">
+                        <h5><br> Result --> "âÉ×âÇàÐÊÇÛæÛÝÊØÆæ~"</h5>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-auto">
+                    <div class="justify-content-center align-items-center align-content-center align-self-center device-container">
+                        <!-- Start: Google Style Text Input --><div class="group">      
+                            <input type="text" required id="AnswerBox">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Answer</label>
+                            <button type="button" class="btn" onclick="checkHash()">Submit</button>
+                        </div>
+                        <!-- End: Google Style Text Input -->
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: -350px;width: 1341px;height: 152px;">
+                <div class="col"></div>
+                <div class="col">
+                    <div style="margin: 0px;margin-left: 431px;margin-bottom: -17px;margin-top: 16px;"><img src="assets/IMG_20200521_221508.jpg?h=e205771131d23e296f54ebc06d78397a" id="wrong_picture"style="height: 188px;margin-right: 0px;padding-right: 0px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/script.min.js?h=7a4e021987da3d38b958d06f38b30142"></script>
+    <script src="assets/js/md5.min.js"></script>
+    <script>
+        function checkHash() {
+            var answerHash ="cfb2643f9215b36b69931db9533b35f5"; //Put the MD5 hash of your answer here
+            var givenText = document.getElementById("AnswerBox").value;
+            var pic = document.getElementById("wrong_picture")
+            if(answerHash === MD5(givenText))
+            {   
+                window.location = 'index.html'; 
+                localStorage.setItem('vQ7Done',true);       //For whichever number question you
+                                                          //change accordingly
+                alert("Kudos!");                                            
+            }
+            else
+            pic.style.display = "block";
+                // alert("Way to go!");
+        }
+    </script>
+</body>
+
+</html>
